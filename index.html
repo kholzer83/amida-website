@@ -200,6 +200,24 @@
       color: var(--text-muted);
     }
 
+    /* ── Referenzen ── */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .ref-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .ref-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── Team ── */
     .team-grid {
       display: grid;
@@ -294,7 +312,7 @@
     <ul>
       <li><a href="#ueber">Über uns</a></li>
       <li><a href="#suchprofil">Suchprofil</a></li>
-      <li><a href="#investoren">Investoren</a></li>
+      <li><a href="#referenzen">Referenzen</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
@@ -366,22 +384,15 @@
   </div>
 
   <!-- ── Investoren ── -->
-  <section id="investoren">
+  <section id="referenzen">
     <div class="section-wrap">
-      <div class="two-col">
-        <div>
-          <p class="eyebrow">Für Investoren</p>
-          <h2>Gemeinsam<br>investieren.</h2>
-          <div class="divider"></div>
-          <p>Wir suchen Partner, die in Wiener Immobilien investieren wollen – mit echter Substanz, transparenter Struktur und klarer Renditeerwartung.</p>
-          <br>
-          <p>Als Co-Investor oder Kapitalgeber profitieren Sie von unserem lokalen Netzwerk, unserem Markt-Know-how und unserer operativen Stärke vor Ort.</p>
-          <br>
-          <a href="#kontakt" class="btn">Gespräch anfragen</a>
-        </div>
-        <div>
-          <img src="img/investoren.jpg" alt="Immobilienentwicklung Wien" />
-        </div>
+      <p class="eyebrow">Referenzen</p>
+      <h2>Unsere Projekte.</h2>
+      <div class="divider"></div>
+      <div class="ref-grid">
+        <img src="img/ref-1.jpg" alt="AMIDA Referenz Wohnzimmer" />
+        <img src="img/ref-2.jpg" alt="AMIDA Referenz Musterwohnung" />
+        <img src="img/ref-3.jpg" alt="AMIDA Referenz Musterwohnung" />
       </div>
     </div>
   </section>
