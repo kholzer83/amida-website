@@ -53,15 +53,12 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      color: var(--text);
-      text-decoration: none;
+    .logo img {
+      height: 28px;
+      width: auto;
+      display: block;
+      filter: invert(1);
     }
-    .logo span { color: var(--gold); }
 
     nav ul { list-style: none; display: flex; gap: 2.5rem; }
 
@@ -293,7 +290,7 @@
 
   <!-- ── Navigation ── -->
   <nav>
-    <a href="#" class="logo">AMI<span>D</span>A</a>
+    <a href="#" class="logo"><img src="img/logo.jpg" alt="AMIDA" /></a>
     <ul>
       <li><a href="#ueber">Über uns</a></li>
       <li><a href="#suchprofil">Suchprofil</a></li>
