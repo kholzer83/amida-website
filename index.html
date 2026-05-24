@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMIDA Immobilien – Wien</title>
+  <meta name="description" content="AMIDA – Immobilieninvestor und -entwickler in Wien. Kein Makler. Wir kaufen, entwickeln und halten.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #1a1a18;
+      --bg-soft:    #222220;
+      --gold:       #c4a46b;
+      --gold-light: #d4b47b;
+      --text:       #f0ebe2;
+      --text-muted: #8c8878;
+      --border:     rgba(196, 164, 107, 0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.2; }
+    h3 { font-size: 1.4rem; }
+
+    /* ── Navigation ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: rgba(26, 26, 24, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo span { color: var(--gold); }
+
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--gold); }
+
+    /* ── Hero ── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 4rem;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 460px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn:hover { background: var(--gold); color: var(--bg); }
+
+    /* ── Sections ── */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 7rem 4rem;
+    }
+
+    .section-alt {
+      background: var(--bg-soft);
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .divider {
+      width: 3rem;
+      height: 1px;
+      background: var(--gold);
+      margin: 1.5rem 0;
+    }
+
+    /* ── Two-column ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .two-col img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    /* ── Criteria grid (Suchprofil) ── */
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .criteria-item {
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.6rem;
+    }
+
+    .criteria-item h4 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .criteria-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Team ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      object-position: top;
+      margin-bottom: 1.2rem;
+    }
+
+    .team-card h3 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.2rem;
+    }
+
+    .team-card .role {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ── Kontakt ── */
+    #kontakt-inner {
+      text-align: center;
+    }
+
+    #kontakt-inner h2 { margin-bottom: 1rem; }
+
+    #kontakt-inner .lead {
+      color: var(--text-muted);
+      max-width: 440px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .contact-link {
+      display: block;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      transition: opacity 0.3s;
+    }
+    .contact-link:hover { opacity: 0.7; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 2rem;
+      transition: color 0.3s;
+    }
+    footer a:hover { color: var(--gold); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      nav ul { display: none; }
+      .section-wrap { padding: 4rem 1.5rem; }
+      .hero-content { padding: 0 1.5rem; }
+      .two-col { grid-template-columns: 1fr; gap: 2rem; }
+      .two-col img { height: 280px; }
+      .criteria-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 0.8rem; text-align: center; }
+      footer a { margin-left: 0; margin-right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav>
+    <a href="#" class="logo">AMI<span>D</span>A</a>
+    <ul>
+      <li><a href="#ueber">Über uns</a></li>
+      <li><a href="#suchprofil">Suchprofil</a></li>
+      <li><a href="#investoren">Investoren</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section id="hero" style="padding:0; max-width:none;">
+    <img src="img/hero.jpg" alt="AMIDA – Immobilien mit Substanz" />
+    <div class="hero-content">
+      <span class="hero-eyebrow">Wien · Immobilien · Entwicklung</span>
+      <h1>Immobilien<br>mit Substanz.</h1>
+      <p class="hero-sub">Wir erwerben, entwickeln und halten Immobilien in Wien – mit langfristiger Perspektive und echtem Sachverstand.</p>
+      <a href="#ueber" class="btn">Mehr erfahren</a>
+    </div>
+  </section>
+
+  <!-- ── Über AMIDA ── -->
+  <section id="ueber">
+    <div class="section-wrap">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Über AMIDA</p>
+          <h2>Investor.<br>Entwickler.<br>Kein Makler.</h2>
+          <div class="divider"></div>
+          <p>AMIDA steht für substanzorientierte Immobilienentwicklung in Wien. Wir kaufen, entwickeln und halten – als Investor und Eigentümer, nicht als Vermittler.</p>
+          <br>
+          <p>Unser Fokus liegt auf Wiener Altbauten und innerstädtischen Lagen mit echtem Entwicklungspotenzial. Wir handeln diskret, schnell und auf Augenhöhe.</p>
+        </div>
+        <div>
+          <img src="img/about.jpg" alt="AMIDA Team Wien" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Suchprofil ── -->
+  <div id="suchprofil" class="section-alt">
+    <div class="section-wrap">
+      <div class="two-col">
+        <div>
+          <img src="img/suchprofil.jpg" alt="Wiener Altbau" />
+        </div>
+        <div>
+          <p class="eyebrow">Suchprofil</p>
+          <h2>Wir suchen.<br>Diskret &amp; direkt.</h2>
+          <div class="divider"></div>
+          <p>Wenn Sie eine Immobilie besitzen und einen verlässlichen Käufer suchen – ohne Makler, ohne lange Wartezeiten – sprechen Sie uns an.</p>
+          <div class="criteria-grid">
+            <div class="criteria-item">
+              <h4>Lage</h4>
+              <p>Wien, alle Bezirke – Schwerpunkt 1.–9. und 20. Bezirk</p>
+            </div>
+            <div class="criteria-item">
+              <h4>Objekte</h4>
+              <p>Altbauten, Zinshäuser, Grundstücke, Gewerbeimmobilien</p>
+            </div>
+            <div class="criteria-item">
+              <h4>Größe</h4>
+              <p>Ab 500 m² Nutzfläche oder ab 300 m² Grundstück</p>
+            </div>
+            <div class="criteria-item">
+              <h4>Zustand</h4>
+              <p>Sanierungsbedürftig bis vollsaniert – alle Zustände willkommen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Investoren ── -->
+  <section id="investoren">
+    <div class="section-wrap">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Für Investoren</p>
+          <h2>Gemeinsam<br>investieren.</h2>
+          <div class="divider"></div>
+          <p>Wir suchen Partner, die in Wiener Immobilien investieren wollen – mit echter Substanz, transparenter Struktur und klarer Renditeerwartung.</p>
+          <br>
+          <p>Als Co-Investor oder Kapitalgeber profitieren Sie von unserem lokalen Netzwerk, unserem Markt-Know-how und unserer operativen Stärke vor Ort.</p>
+          <br>
+          <a href="#kontakt" class="btn">Gespräch anfragen</a>
+        </div>
+        <div>
+          <img src="img/investoren.jpg" alt="Immobilienentwicklung Wien" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Team ── -->
+  <div id="team" class="section-alt">
+    <div class="section-wrap">
+      <p class="eyebrow">Das Team</p>
+      <h2>Menschen mit<br>Markt-Know-how.</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="img/crew-1.jpg" alt="Matthias, Gründer AMIDA" />
+          <h3>Matthias</h3>
+          <p class="role">Gründer &amp; Geschäftsführer</p>
+        </div>
+        <div class="team-card">
+          <img src="img/crew-2.jpg" alt="AMIDA Crew" />
+          <h3>AMIDA Crew</h3>
+          <p class="role">Entwicklung &amp; Akquisition</p>
+        </div>
+        <div class="team-card">
+          <img src="img/crew-3.jpg" alt="AMIDA Crew" />
+          <h3>AMIDA Crew</h3>
+          <p class="role">Finanzen &amp; Investor Relations</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Kontakt ── -->
+  <section id="kontakt">
+    <div class="section-wrap">
+      <div id="kontakt-inner">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Sprechen wir<br>miteinander.</h2>
+        <div class="divider" style="margin: 1.5rem auto;"></div>
+        <p class="lead">Ob Sie ein Objekt verkaufen, investieren oder kooperieren möchten – wir freuen uns auf Ihre Nachricht.</p>
+        <a href="mailto:office@amida.at" class="contact-link">office@amida.at</a>
+        <a href="tel:+43" class="contact-link">+43 ...</a>
+        <br>
+        <a href="mailto:office@amida.at" class="btn" style="margin-top:1rem;">Jetzt schreiben</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div>© 2025 AMIDA Immobilien · Wien</div>
+    <div>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+    </div>
+  </footer>
+
+</body>
+</html>
